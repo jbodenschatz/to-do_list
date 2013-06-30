@@ -1,7 +1,15 @@
+<%
+thisTitle = "to-do list"
+
+if (yield(:title)) != ""
+  thisTitle += " | " + yield(:title)
+end
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>to-do list</title>
+  <title><%= thisTitle %></title>
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>

@@ -1,24 +1,27 @@
 <% provide(:title, 'sign up') %>
 <div id="contentwrapper">
 	<h1>sign up</h1>
-	<p class="gentext" style="font-size: 10px; margin-bottom: 15px;">Already have an account? <%= link_to "Sign in!", "#" %></p>
+	<p class="gentext" style="font-size: 10px; margin-bottom: 15px;">
+        Already have an account? <%= link_to "Sign in!", "#" %>
+    </p>
 	<p class="gentext">Sign up below. It's free!</p>
 	<p class="gentext">All fields are required.</p>
 	<p class="gentext">&nbsp;</p>
-	
-	<form accept-charset="UTF-8" action="/users" class="new_user" id="new_user" method="post">
+    
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
 
-		<input class="textbox" id="user_name" name="user[name]" size="30" type="text" placeholder="name" />
-		
-		<input class="textbox" id="user_email" name="user[email]" size="30" type="text" placeholder="email@provider.com" />
-		
-		<input class="textbox" id="user_password" name="user[password]" size="30" type="password" placeholder="password" />
+      <%= f.text_field :name, placeholder: "name" %>
 
-		<input class="textbox" id="user_password_confirmation" name="user[password_confirmation]" size="30" type="password" placeholder="confirm password" />
+      <%= f.text_field :email, placeholder: "email@provider.com" %>
 
-		<div id="buttoncontainer" style="display: inline-block;">
-			<input class="button" name="commit" type="submit" value="create" />
-			<input class="button" name="cancel" type="reset" value="cancel" />
-		</div>
-	</form>
+      <%= f.password_field :password, placeholder: "password" %>
+
+      <%= f.password_field :password_confirmation, placeholder: "confirm password" %>
+      
+      <div id="buttoncontainer" style="display: inline-block;">
+          <%= f.submit "create", class: "button" %>
+      </div>
+    <% end %>
+    
 </div>

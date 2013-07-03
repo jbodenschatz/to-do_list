@@ -77,7 +77,34 @@ h1
 	font-size: 10px
 }
 
+#error_explanation
+{
+    font-family: Verdana, Arial,sans-serif;
+    font-size: 12px;
+    background-color: rgb(226, 221, 180);
+    color: rgb(206, 23, 23);
+}
 
+.alert
+{
+    font-weight: bold;
+}
+
+.alert-success
+{
+    border-width: 2px;
+	border-style: solid;
+	border-color: rgb(214, 58, 0);
+	border-radius: 4px;
+    color: rgb(168, 46, 0);
+    font-weight: normal;
+    background-color: rgb(247, 197, 151);
+}
+
+#error_explanation ul
+{
+    list-style-type: none;
+}
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

@@ -128,6 +128,12 @@ h1
     list-style-type: none;
 }
 
+.debug_dump
+{
+    text-align: left;
+    padding-top: 50px;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

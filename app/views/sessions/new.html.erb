@@ -1,0 +1,20 @@
+<% provide(:title, 'log in') %>
+<div id="contentwrapper">
+	<h1><%= (yield(:title)) %></h1>
+	<p class="gentext" style="font-size: 10px; margin-bottom: 15px;">
+        Don't have an account? <%= link_to "Sign up!", signup_path %>
+    </p>
+	<p class="gentext">Log in below to view your to-do lists.</p>
+	<p class="gentext">&nbsp;</p>
+    
+    <%= form_for(:session, url: sessions_path) do |f| %>
+
+      <%= f.text_field :email, placeholder: "email@provider.com" %>
+
+      <%= f.password_field :password, placeholder: "password" %>
+      
+      <div id="buttoncontainer" style="display: inline-block;">
+          <%= f.submit "log in", class: "button" %>
+      </div>
+    <% end %>
+</div>

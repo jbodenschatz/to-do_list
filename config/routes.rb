@@ -3,7 +3,11 @@ ToDoList::Application.routes.draw do
   
   # Users
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+  
   match '/signup',  to: 'users#new'
+  match '/login',  to: 'sessions#new'
+  match '/logout', to: 'sessions#destroy', via: :delete
   match '/users',	to: 'users#create' #maybe change this to /createuser?
   
   # Static pages
